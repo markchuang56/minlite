@@ -1,0 +1,17 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "5PN4a18fXUBdbK3FWBzpizueADc=",
+			"path": "github.com/garyburd/go-oauth/examples/session",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "lPXxyOVG2BPwrisuWiC4d4Wrs6M=",
+			"path": "github.com/garyburd/go-oauth/oauth",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/markchuang56/minlite"
+}
