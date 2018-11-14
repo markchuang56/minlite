@@ -274,38 +274,25 @@ func ApiTure(op bool) {
 	}
 }
 
-//func ApiServeHTTP(w http.ResponseWriter, r *http.Request, optional bool) *ApiCredentials {
 func ApiServeHTTP(w http.ResponseWriter, r *http.Request) *ApiCredentials {
 	fmt.Println(" =====  API HTTP  =====")
-	cred, _ := session.Get(r)[tokenCredKey].(*oauth.Credentials)
-	fmt.Println(cred)
-	fmt.Println("xx HTTP")
-	if cred == nil { //} && !h.optional {
-		//if cred == nil && !optional {
-		//http.Error(w, "Not logged in.", 403)
-		return nil
-	}
-	if cred.Token == "" {
-		return nil
-	}
+	fmt.Println(" =====  API ELSE  =====")
+	return nil
+	/*
+		cred, _ := session.Get(r)[tokenCredKey].(*oauth.Credentials)
+		fmt.Println(cred)
+		fmt.Println("xx HTTP")
+		if cred == nil {
+			return nil
+		}
+		if cred.Token == "" {
+			return nil
+		}
 
-	credx := ApiCredentials{cred.Token, cred.Secret}
-	return &credx
-	//h.handler(w, r, cred)
+		credx := ApiCredentials{cred.Token, cred.Secret}
+		return &credx
+	*/
 }
-
-/*
-func (h *authHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(" *****  SERVE HTTP  *****")
-	cred, _ := session.Get(r)[tokenCredKey].(*oauth.Credentials)
-	fmt.Println(cred)
-	fmt.Println("HTTP")
-	if cred == nil && !h.optional {
-		http.Error(w, "Not logged in.", 403)
-	}
-	h.handler(w, r, cred)
-}
-*/
 
 // apiGet issues a GET request to the Twitter API and decodes the response JSON to data.
 func apiGet(cred *oauth.Credentials, urlStr string, form url.Values, data interface{}) error {
