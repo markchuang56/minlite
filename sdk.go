@@ -276,22 +276,22 @@ func ApiTure(op bool) {
 
 func ApiServeHTTP(w http.ResponseWriter, r *http.Request) *ApiCredentials {
 	fmt.Println(" =====  API HTTP  =====")
-	fmt.Println(" =====  API ELSE  =====")
-	return nil
-	/*
-		cred, _ := session.Get(r)[tokenCredKey].(*oauth.Credentials)
-		fmt.Println(cred)
-		fmt.Println("xx HTTP")
-		if cred == nil {
-			return nil
-		}
-		if cred.Token == "" {
-			return nil
-		}
+	fmt.Println(" =====  API ELSE(OK)  =====")
+	//return nil
 
-		credx := ApiCredentials{cred.Token, cred.Secret}
-		return &credx
-	*/
+	cred, _ := session.Get(r)[tokenCredKey].(*oauth.Credentials)
+	fmt.Println(cred)
+	fmt.Println("xx HTTP")
+	if cred == nil {
+		return nil
+	}
+	if cred.Token == "" {
+		return nil
+	}
+
+	credx := ApiCredentials{cred.Token, cred.Secret}
+	return &credx
+
 }
 
 // apiGet issues a GET request to the Twitter API and decodes the response JSON to data.
