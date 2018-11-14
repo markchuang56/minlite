@@ -19,7 +19,6 @@ package session
 import (
 	"crypto/rand"
 	"encoding/hex"
-	"fmt"
 	"net/http"
 	"sync"
 )
@@ -31,21 +30,11 @@ var (
 
 // Get returns the session data for the request client.
 func Get(r *http.Request) (s map[string]interface{}) {
-	fmt.Println("=== session ===")
-	fmt.Println(s)
-
-	c, _ := r.Cookie("session")
-	if c != nil && c.Value != "" {
-		//if c, _ := r.Cookie("session"); c != nil && c.Value != "" {
+	if c, _ := r.Cookie("session"); c != nil && c.Value != "" {
 		mu.Lock()
 		s = sessions[c.Value]
 		mu.Unlock()
 	}
-
-	fmt.Println(c)
-	fmt.Println(c.Value)
-	fmt.Println(s)
-	fmt.Println("=== session end ===")
 	if s == nil {
 		s = make(map[string]interface{})
 	}
@@ -54,9 +43,6 @@ func Get(r *http.Request) (s map[string]interface{}) {
 
 // Save saves session for the request client.
 func Save(w http.ResponseWriter, r *http.Request, s map[string]interface{}) error {
-	fmt.Println("=== session save ===")
-	fmt.Println(s)
-	fmt.Println("=== session save end ===")
 	key := ""
 	if c, _ := r.Cookie("session"); c != nil {
 		key = c.Value

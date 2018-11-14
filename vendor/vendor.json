@@ -3,9 +3,10 @@
 	"ignore": "test",
 	"package": [
 		{
-			"checksumSHA1": "5PN4a18fXUBdbK3FWBzpizueADc=",
+			"checksumSHA1": "66pT6Eh168IXicc0tmkhC4pjSyU=",
 			"path": "github.com/garyburd/go-oauth/examples/session",
-			"revision": ""
+			"revision": "bca2e7f09a178fd36b034107a00e2323bca6a82e",
+			"revisionTime": "2018-03-19T15:54:56Z"
 		},
 		{
 			"checksumSHA1": "lPXxyOVG2BPwrisuWiC4d4Wrs6M=",
