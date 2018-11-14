@@ -137,6 +137,10 @@ var credPath = flag.String("t-config", "mconfig.json", "Path to configuration fi
 
 var localCredentials oauth.Credentials
 
+func ApiCheck() {
+	fmt.Println("I'm HERE !!")
+}
+
 func ApiReadCredentials() error {
 	//ApiTimeStamp()
 	loopBusy = false
