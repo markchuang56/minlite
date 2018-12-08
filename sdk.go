@@ -255,6 +255,7 @@ func serveOAuthCallback(w http.ResponseWriter, r *http.Request) {
 func ApiLogout() {
 
 }
+
 func serveLogout(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(" *****  SERVE LOGOUT  *****")
 	s := session.Get(r)
